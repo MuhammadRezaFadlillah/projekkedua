@@ -1,0 +1,477 @@
+:root {
+  --gradient-start: #4ED7F1;
+  --gradient-mid: #6FE6FC;
+  --gradient-end: #FFFA8D;
+
+  --primary-color: #4ED7F1;
+  --accent-color: #FFFA8D;
+  --primary-light: #A8F1FF;
+  --background-light: #EFFFFF;
+  --text-dark: #333333;
+
+  --radius: 0.75rem;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --transition: all 0.3s ease;
+}
+
+/* ========== Reset & Base ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #f3f7ff, #ffffff);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+}
+
+/* ========== Animations ========== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease forwards;
+  opacity: 0;
+}
+
+/* ========== Forms (Login & Register) ========== */
+.login-section,
+.register-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-section {
+  background: #fff;
+}
+
+.register-section {
+  background-color: var(--background-light);
+}
+
+.login-form,
+.register-form {
+  background-color: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  transition: var(--transition);
+}
+
+.login-form h2,
+.register-form h2 {
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  transition: var(--transition);
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+  outline: none;
+}
+
+input[type="file"] {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #333;
+  transition: var(--transition);
+  width: 100%;
+}
+
+input[type="file"]::file-selector-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+input[type="file"]::file-selector-button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+#image-preview {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+  transition: var(--transition);
+}
+button {
+  padding: 0.75rem;
+  background-color: var(--accent-color); /* Kuning dari :root */
+  color: #333; /* Teks gelap agar kontras */
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: bold;
+  display: block;
+  margin: 1rem auto; /* Tengah horizontal */
+  text-align: center;
+}
+
+button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1.5px);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid var(--primary-light);
+  box-shadow: var(--shadow);
+  padding: 1rem 2rem;
+  top: 0;
+  z-index: 1000;
+}
+.navbar-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.navbar-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar-logo-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.navbar-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  transition: var(--transition);
+}
+
+.navbar-button:hover {
+  background-color: var(--primary-light);
+}
+
+/* ========== Story Feed ========== */
+.story-feed {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.story-feed h2 {
+  font-size: 1.6rem;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.story-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.story-item {
+  background-color: #fafbff;
+  border-radius: var(--radius);
+  padding: 1rem;
+  border: 1px solid var(--primary-light);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.story-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(108, 99, 255, 0.12);
+}
+
+.detail-button {
+  background-color: var(--accent-color);
+  margin-top: 1rem;
+}
+
+.detail-button:hover {
+  background-color: #ffbc00;
+}
+
+/* ========== Add Story Form ========== */
+.add-story {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.submit-button {
+  background-color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.submit-button:hover {
+  background-color: #5548d8;
+}
+
+/* ========== Footer ========== */
+.footer {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.footer-credit {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* ========== Utility & Accessibility ========== */
+.login-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.login-logo {
+  width: 200px;
+  height: auto;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 1000;
+  text-decoration: none;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ========== Responsive ========== */
+@media screen and (max-width: 768px) {
+  .navbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-menu {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .story-feed,
+  .add-story,
+  .login-form,
+  .register-form {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .story-list {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    position: relative;
+    box-shadow: none;
+  }
+}
+/* Hover Effect for Image */
+.detail-image-container:hover .detail-image {
+  transform: scale(1.05);
+}
+
+/* Hover Overlay Effect */
+.detail-image-container:hover .hover-overlay {
+  display: block;
+}
+
+/* Back Button Styling */
+.back-button {
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+}
+/* Styling for input focus */
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button Hover Effect */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Loading Indicator Styling */
+.loading-indicator {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Error Message Styling */
+#error-message {
+  font-size: 1rem;
+  color: red;
+  text-align: center;
+}
+/* Styling for input focus */
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button Hover Effect */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Loading Indicator Styling */
+.loading-indicator {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Error Message Styling */
+#error-message {
+  font-size: 1rem;
+  color: red;
+  text-align: center;
+}
+
+/* Forgot Password Link */
+a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+#map-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  max-width: 900px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  z-index: 0;
+}
