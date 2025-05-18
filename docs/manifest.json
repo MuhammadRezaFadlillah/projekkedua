@@ -1,0 +1,51 @@
+{
+  "name": "AplikasiStoryReza",
+  "short_name": "AplikasiStory",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Tambah Cerita",
+      "short_name": "Tambah",
+      "description": "Buka halaman tambah cerita baru",
+      "url": "/#/add",
+      "icons": [
+        {
+          "src": "/icons/add-icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/screenshots/desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "label": "Tampilan Desktop"
+    },
+    {
+      "src": "/assets/screenshots/mobile.png",
+      "sizes": "266x582",
+      "type": "image/png",
+      "label": "Tampilan Mobile"
+    }
+  ]
+}
+
